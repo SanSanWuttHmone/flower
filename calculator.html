@@ -1,0 +1,48 @@
+<!doctype html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Calculator </title>
+</head>
+<body>
+<label for="num1"> Enter first number :</label>
+<input type="text" id="num1"><br><br>
+<label for="num2"> Enter second number: </label>
+<input type="text" id="num2"><br><br>
+<button onclick="sum()"> + </button>
+<button onclick="sub()"> - </button>
+<button onclick="mul()"> * </button>
+<button onclick="div()"> / </button>
+<p id="cal"></p>
+<script>
+	function sum(){
+		var n1 = parseInt(document.getElementById('num1').value);
+		var n2 = parseInt(document.getElementById('num1').value);
+		var result=n1+n2;
+		document.getElementById('cal').innerHTML=result;
+
+	}
+	function sub(){
+		var n = parseInt(document.getElementById('num1').value);
+		var n = parseInt(document.getElementById('num1').value);
+		var result=n-n;
+		document.getElementById('cal').innerHTML=result;
+
+	}
+	function mul(){
+		var b = parseInt(document.getElementById('num1').value);
+		var c = parseInt(document.getElementById('num1').value);
+		var result=b*c;
+		document.getElementById('cal').innerHTML=result;
+
+	}
+	function div(){
+		var d = parseInt(document.getElementById('num1').value);
+		var e = parseInt(document.getElementById('num1').value);
+		var result=d/e;
+		document.getElementById('cal').innerHTML=result;
+
+	}
+</script>
+</body>
+</html>
