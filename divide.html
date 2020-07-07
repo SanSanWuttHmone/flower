@@ -1,0 +1,31 @@
+<!doctype html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Divided by 2 and 5 </title>
+</head>
+<body>
+<label for="num1"> First number:</label>
+<input type="text" id="num1"><br>
+<label for="num2"> Second number:</label>
+<input type="text" id="num2"><br>
+<button onclick="btn()"> Divide </button>
+<p id="pass"></p>
+
+<script>
+	function btn(){
+		var a=parseInt(document.getElementById('num1').value);
+		var b=parseInt(document.getElementById('num2').value);
+		var c;
+		
+		for(c=a; c<=b; c++){
+		if (c%2==0 && c%5==0) {
+			
+			document.getElementById('pass').innerHTML+= c;
+		}
+	}
+}
+</script>
+
+</body>
+</html>
