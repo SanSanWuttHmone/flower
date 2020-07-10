@@ -1,0 +1,40 @@
+<html>
+<head>
+       <title>Text</title>
+    </head>
+    <body>
+        
+            <h1 style="color: blue;">Task List</h1><br><br>
+            <input type="text" id="task" placeholder="Please Enter your id">
+            <button onclick="add()">Add</button>
+            <ul id="list" style="list-style-type: none;">
+            </ul>
+        
+        <script>
+            
+           
+            function add() {
+                var a = document.getElementById("task").value;
+            var list1= document.getElementById("list");
+            var li = document.createElement("li");
+            var input = document.createElement("input");
+            input.value=a;
+            li.appendChild(input);
+            list1.appendChild(li);
+
+               var btn1 = document.createElement("button");
+                btn1.innerHTML = "Delete ID";
+                li.appendChild(btn1);
+                btn1.addEventListener("click", function () {
+                    li.remove();
+                });
+            }
+               
+                
+                
+                
+        </script>
+    
+
+               
+                </body></html>

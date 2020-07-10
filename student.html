@@ -1,0 +1,118 @@
+<!doctype html>
+<head>	
+	<title> Student List </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        	.a{
+        		margin-left: 20%;
+        		float: left;
+        		margin-top: 10%;
+        		color: white;
+        	}
+        	.b{
+        		float: right;
+        		margin-right: 20%;
+        		margin-top: 10%;
+        	}
+        	.a1{
+        		margin-left: 20%;
+        		float: left;
+        		padding-right: 50%;
+        		padding-top: 20px;
+        	}
+        </style>
+        
+    </head>
+    <body style="background-color: lightgrey;">
+        <div class="a">
+            <input type="text" placeholder="Name" id="na"><br><br>
+            <input type="text" placeholder="Phone" id="ph"><br><br>
+            <input type="text" placeholder="Email" id="em"><br><br>
+       		<input type="text" placeholder="Address" id="ad"><br><br>
+       	</div>
+       	<div class="b">
+            <input type="radio" name="gender" value="male">
+            <label>Male</label>&nbsp;
+            <input type="radio" name="gender" value="female">
+            <label>Female</label><br><br>
+            <input type="checkbox" name="type" value="5O1">
+            <label>5O1</label>&nbsp;
+            <input type="checkbox" name="type" value="5O2">
+            <label>5O2</label>&nbsp;
+            <input type="checkbox" name="type" value="5O3">
+            <label>5O3</label><br><br>
+            <button type="button" onclick="add()">Save</button>
+        </div>
+        
+        <div class="a1">
+            <table id="table" style="border: 1px solid black; border-collapse: collapse;">
+                <thead><tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Gender</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+            	
+            </tbody>
+            </table>
+        </div>
+        <script>
+            function add(){
+                var name=document.getElementById("na").value;
+                var phone=document.getElementById("ph").value;
+                var email=document.getElementById("em").value;
+                var address=document.getElementById("ad").value;
+
+                var rdvalue="";
+                var radio=document.getElementsByName('gender');
+                for(i = 0; i < radio.length; i++) { 
+                    if(radio[i].checked) 
+                    rdvalue=radio[i].value; 
+                } 
+                var checkval="";
+                var check=document.getElementsByName('type');
+                for(i = 0; i < check.length; i++) { 
+                    if(check[i].checked) 
+                    checkval+=check[i].value; 
+                } 
+
+                var name_New= document.createTextNode(name);
+				var phone_New= document.createTextNode(phone);
+				var email_New= document.createTextNode(email);
+				var address_New= document.createTextNode(address);
+				var rdvalue_New= document.createTextNode(rdvalue);
+				var checkval_New= document.createTextNode(checkval);
+
+				var table=document.getElementById("table");
+				var row=document.createElement("tr");
+				var col1=document.createElement("td");
+				var col2=document.createElement("td");
+				var col3=document.createElement("td");
+				var col4=document.createElement("td");
+				var col5=document.createElement("td");
+				var col6=document.createElement("td");
+
+				table.appendChild(row);
+				row.appendChild(col1);
+				row.appendChild(col2);
+				row.appendChild(col3);
+				row.appendChild(col4);
+				row.appendChild(col5);
+				row.appendChild(col6);
+
+				col1.appendChild(name_New);
+				col2.appendChild(phone_New);
+				col3.appendChild(email_New);
+				col4.appendChild(address_New);
+				col5.appendChild(rdvalue_New);
+				col6.appendChild(checkval_New);     
+            }
+        </script>
+    
+</body>
+</html>
